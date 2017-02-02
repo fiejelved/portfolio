@@ -1,3 +1,18 @@
-h1 {
-  color: blue;
-  font-size: 40px; }
+header {
+  background-color: dimgrey;
+  position: fixed;
+  z-index: 2;
+  width: 100vw;
+  box-shadow: 0 5px 2px dimgrey; }
+  header a {
+    color: white !important; }
+
+section:nth-last-of-type(odd) {
+  background-color: darkgrey; }
+
+section.intro-section, section.projects-section, section.about-section, section.skills-section {
+  height: 100vh;
+  padding-top: 100px; }
+
+section a {
+  color: black; }
