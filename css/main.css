@@ -1,18 +1,239 @@
-header {
-  background-color: dimgrey;
-  position: fixed;
-  z-index: 2;
-  width: 100vw;
-  box-shadow: 0 5px 2px dimgrey; }
-  header a {
-    color: white !important; }
-
-section:nth-last-of-type(odd) {
-  background-color: darkgrey; }
-
-section.intro-section, section.projects-section, section.about-section, section.skills-section {
+@import url("https://fonts.googleapis.com/css?family=Paytone+One");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
   height: 100vh;
-  padding-top: 100px; }
+  margin: 0;
+  overflow: hidden;
+  background-color: #ef2277;
+  background-image: radial-gradient(at left 50%, #ef2277 1%, #ef2277 1%, #c72929 31%, #63139d 64%, #272a6c 89%, #272a6c 100%);
+  font-family: "Roboto", sans-serif; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    text-transform: uppercase;
+    font-family: "Paytone One", sans-serif; }
 
-section a {
-  color: black; }
+header {
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  width: 600px;
+  margin-left: auto;
+  z-index: 9;
+  margin-top: 20px; }
+  header li {
+    cursor: pointer;
+    letter-spacing: 1.2px;
+    list-style: none;
+    font-family: "Paytone One", sans-serif;
+    text-transform: uppercase;
+    color: #BF43AD;
+    font-size: 18px;
+    padding-left: 12px;
+    padding-right: 12px;
+    transition: 250ms; }
+    header li:hover {
+      color: #FFEDED;
+      transform: skew(-10deg); }
+
+.cross-btn {
+  position: relative;
+  height: 40px;
+  width: 50px;
+  margin: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  cursor: pointer; }
+  .cross-btn.project span {
+    height: 2px;
+    width: 30px; }
+  .cross-btn span {
+    height: 2px;
+    width: 50px;
+    background-color: #FFEDED;
+    display: block;
+    position: absolute; }
+    .cross-btn span.first {
+      margin-bottom: 20px; }
+      .cross-btn span.first.rotate {
+        animation: rotate-cross-first 300ms 200ms forwards; }
+    .cross-btn span.second {
+      transform: rotate(90deg); }
+      .cross-btn span.second.rotate {
+        animation: rotate-cross-second 300ms 200ms forwards; }
+
+.content-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: space-between;
+  flex: 1;
+  display: flex;
+  overflow: auto; }
+  .content-wrapper .projects li {
+    font-family: "Paytone One", sans-serif;
+    list-style: none;
+    text-transform: uppercase;
+    color: #0A0360;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    font-size: 26px; }
+
+.name-wrapper {
+  font-family: "Paytone One", sans-serif;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  width: calc(100% - 600px); }
+  .name-wrapper h1 {
+    color: #0A0360;
+    font-size: 85px;
+    margin-bottom: 0;
+    margin-top: 0; }
+  .name-wrapper h2 {
+    color: #FFEDED;
+    font-size: 20px;
+    letter-spacing: 2px; }
+
+.nav-wrapper {
+  background-color: rgba(85, 28, 128, 0.25);
+  min-height: 100vh;
+  width: 600px;
+  box-shadow: -6px 6px 36px -4px #551C80;
+  overflow: auto; }
+
+.project-item {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  margin-top: 45px; }
+
+#gm-wrapper.visible, #luf-wrapper.visible, #sr-wrapper.visible, #db-wrapper.visible, #zoomdoc-wrapper.visible {
+  visibility: visible;
+  animation: fadein 1s; }
+
+#about-wrapper {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: space-between;
+  margin-top: 45px; }
+  #about-wrapper .image-wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-left: 10vw; }
+  #about-wrapper .fie-image {
+    height: 400px;
+    width: 281px;
+    background-image: url(/img/IMG_1546.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: -6px 6px 36px -4px #551C80; }
+  #about-wrapper.visible {
+    visibility: visible;
+    animation: fadein 1s; }
+  #about-wrapper .about-text {
+    padding-top: 100px;
+    color: #FFEDED;
+    width: 600px; }
+    #about-wrapper .about-text h2, #about-wrapper .about-text h3 {
+      text-align: center; }
+    #about-wrapper .about-text h2 {
+      margin-bottom: 0;
+      font-size: 36px;
+      letter-spacing: 1.2px; }
+    #about-wrapper .about-text h3 {
+      font-size: 16px;
+      letter-spacing: 1.2px;
+      margin-top: 0;
+      margin-bottom: 30px; }
+    #about-wrapper .about-text p {
+      width: 430px;
+      text-align: center;
+      margin-right: auto;
+      margin-left: auto;
+      line-height: 25px; }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes rotate-cross-first {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(40deg); } }
+
+@keyframes rotate-cross-second {
+  from {
+    transform: rotate(90deg); }
+  to {
+    transform: rotate(140deg); } }

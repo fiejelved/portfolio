@@ -10,7 +10,7 @@ gulp.task('sass', function() {
     .pipe(browserSync.reload({
       stream: true
     }))
-})
+});
 
 gulp.task('browserSync', function() {
   browserSync.init({
@@ -18,9 +18,11 @@ gulp.task('browserSync', function() {
       baseDir: './'
     },
   })
-})
+});
  
 gulp.task('watch', ['browserSync', 'sass'], function(){
+  livereload.listen();
   gulp.watch('./sass/**/*.scss', ['sass']); 
   // Other watchers
-})
+});
+

@@ -1,28 +1,212 @@
 @import 'mixins';
 @import 'variables';
 
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-color: rgba(239,34,119,1);
+  background-image: radial-gradient(at left 50%, rgba(239,34,119,1) 1%, rgba(239,34,119,1) 1%, rgba(199,41,41,1) 31%, rgba(99,19,157,1) 64%, rgba(39,42,108,1) 89%, rgba(39,42,108,1) 100%);
+  font-family: $body-text;
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    font-family: $primary-font;
+  }
+}
 header {
-  background-color: dimgrey;
-  position: fixed;
-  z-index: 2;
-  width: 100vw;
-  box-shadow: 0 5px 2px dimgrey;
-  a {
-    color: white !important;
+  text-align: center;
+  @include flexbox;
+  @include justify-content(center);
+  width: 600px;
+  margin-left: auto;
+  z-index: 9;
+  margin-top: 20px;
+  li {
+    cursor: pointer;
+    letter-spacing: 1.2px;
+    list-style: none;
+    font-family: $primary-font;
+    text-transform: uppercase;
+    color: $pink;
+    font-size: 18px;
+    padding-left: 12px;
+    padding-right: 12px;
+    transition: 250ms;
+    &:hover {
+      color: $broken-white;
+      transform: skew(-10deg);
+    }
   }
 }
-section {
-  &:nth-last-of-type(odd){
-    background-color: darkgrey;
+.cross-btn {
+  position: relative;
+  height: 40px;
+  width: 50px;
+  margin: auto;
+  @include flexbox;
+  @include justify-content(center);
+  cursor: pointer;
+  &.project {
+    span {
+      height: 2px;
+      width: 30px;
+    }
   }
-  &.intro-section,
-  &.projects-section,
-  &.about-section,
-  &.skills-section {
-    height: 100vh;
+  span {
+    height: 2px;
+    width: 50px;
+    background-color: $broken-white;
+    display: block;
+    position: absolute;
+    &.first {
+      margin-bottom: 20px;
+      &.rotate {
+        animation: rotate-cross-first 300ms 200ms forwards;
+      }
+    }
+    &.second {
+      transform: rotate(90deg);
+      &.rotate {
+        animation: rotate-cross-second 300ms 200ms forwards;
+      }
+    }
+  }
+}
+.content-wrapper {
+  @include flexbox;
+  @include justify-content(space-between);
+  flex: 1;
+  display: flex;
+  overflow: auto;
+  .projects {
+    li {
+      font-family: $primary-font;
+      list-style: none;
+      text-transform: uppercase;
+      color: $dark-blue;
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(center);
+      font-size: 26px;
+    }
+  }
+}
+.name-wrapper {
+  font-family: $primary-font;
+  text-transform: uppercase;
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
+  text-align: center;
+  width: calc(100% - 600px);
+  h1 {
+    color: $dark-blue;
+    font-size: 85px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  h2 {
+    color: $broken-white;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+.nav-wrapper {
+  background-color: rgba(85,28,128, .25);
+  min-height: 100vh;
+  width: 600px;
+  box-shadow: -6px 6px 36px -4px $dark-purple;
+  overflow: auto;
+}
+.project-item {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  margin-top: 45px
+}
+#gm-wrapper, #luf-wrapper, #sr-wrapper, #db-wrapper, #zoomdoc-wrapper {
+  &.visible {
+    visibility: visible;
+    animation: fadein 1s;
+  }
+}
+#about-wrapper {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  @include flexbox;
+  @include justify-content(space-between);
+  margin-top: 45px;
+  .image-wrapper {
+    @include flexbox;
+    @include align-items(center);
+    margin-bottom: 30px;
+    margin-left: 10vw;
+  }
+  .fie-image {
+    height: 400px;
+    width: 281px;
+    background-image: url(/img/IMG_1546.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: -6px 6px 36px -4px $dark-purple;
+  }
+  &.visible {
+    visibility: visible;
+    animation: fadein 1s;
+  }
+  .about-text {
     padding-top: 100px;
-  }
-  a {
-    color: black;
+    color: $broken-white;
+    width: 600px;
+    h2, h3 {
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 0;
+      font-size: 36px;
+      letter-spacing: 1.2px;
+    }
+    h3 {
+      font-size: 16px;
+      letter-spacing: 1.2px;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+    p {
+      width: 430px;
+      text-align: center;
+      margin-right: auto;
+      margin-left: auto;
+      line-height: 25px; 
+    }
   }
 }
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes rotate-cross-first {
+  from { 
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(40deg);
+  }
+}
+@keyframes rotate-cross-second {
+  from { 
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(140deg);
+  }
+}
+
+

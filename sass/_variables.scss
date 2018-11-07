@@ -1,2 +1,10 @@
-$color-red: red;
-$color-blue: blue;
+@import url('https://fonts.googleapis.com/css?family=Paytone+One');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$primary-font: 'Paytone One', sans-serif;
+$body-text: 'Roboto', sans-serif;
+
+$dark-blue:#0A0360;
+$dark-purple: #551C80;
+$pink: #BF43AD;
+$broken-white: #FFEDED;
