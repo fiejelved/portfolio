@@ -1,5 +1,5 @@
 // Flexbox display
-@mixin flexbox() {
+@mixin display-flex() {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -87,8 +87,8 @@
           align-items: $align;
 }
 
-@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
-  -webkit-box-shadow:$top $left $blur $color #{$inset};
-  -moz-box-shadow:$top $left $blur $color #{$inset};
-  box-shadow:$top $left $blur $color #{$inset};
+@mixin box-shadow($x: 0px, $y: 4px, $blur: 20px, $spread: 1px, $color: rgba(0, 0, 0, 0.2)) {
+  -webkit-box-shadow: $x $y $blur $spread $color;
+  -moz-box-shadow: $x $y $blur $spread $color;
+  box-shadow: $x $y $blur $spread $color;
 }
