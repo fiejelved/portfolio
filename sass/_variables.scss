@@ -1,2 +1,11 @@
-$color-red: red;
-$color-blue: blue;
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Hind+Madurai&display=swap');
+
+$primary-font: 'Anton', sans-serif;
+$body-text: 'Hind Madurai', sans-serif;
+
+$dark-blue:#0A0360;
+$dark-purple: #551C80;
+$pink: #BF43AD;
+$broken-white: #FFEDED;
