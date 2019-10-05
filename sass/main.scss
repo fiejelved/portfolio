@@ -47,12 +47,13 @@ header {
       @include justify-content(center);
       margin: 0 auto 0 auto;
       padding: 0;
-      width: 300px;
+      width: 340px;
       background-color: white;
       padding-top: 15px;
       padding-bottom: 15px;
       box-shadow: -6px 6px 36px -4px $dark-purple;
-      li {
+      li, .link-cv {
+        text-decoration: none;
         position: relative;
         &:after {
           position: absolute;
@@ -83,7 +84,7 @@ header {
       }
     }
   }
-  li {
+  li, .link-cv {
     cursor: pointer;
     letter-spacing: 1.2px;
     list-style: none;
@@ -397,6 +398,17 @@ header {
     @include box-shadow;
   }
 }
+#goldmedal-wrapper {
+  .desktop-img {
+    background-image: url('../img/projects/goldmedal-desktop.png');
+  }
+  .tablet-img {
+    background-image: url('../img/projects/goldmedal-tablet.png');
+  }
+  .mobile-img {
+    background-image: url('../img/projects/goldmedal-mobile.png');
+  }
+}
 #luf-wrapper {
   .desktop-img {
     background-image: url('../img/projects/luf-desktop.png');
@@ -666,9 +678,10 @@ header {
 
 @media screen and(min-width: 1550px){
   .project-images {
+    max-width: 800px;
     .desktop-img {
-      height: 445px;
-      width: 870px;  
+      height: 400px;
+      width: 800px;  
     }
     .mobile-img {
       top: 35%;

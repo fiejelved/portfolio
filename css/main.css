@@ -52,14 +52,15 @@ header {
       -ms-flex-pack: center;
       margin: 0 auto 0 auto;
       padding: 0;
-      width: 300px;
+      width: 340px;
       background-color: white;
       padding-top: 15px;
       padding-bottom: 15px;
       box-shadow: -6px 6px 36px -4px #551C80; }
-      header .top-nav .top-nav-links li {
+      header .top-nav .top-nav-links li, header .top-nav .top-nav-links .link-cv {
+        text-decoration: none;
         position: relative; }
-        header .top-nav .top-nav-links li:after {
+        header .top-nav .top-nav-links li:after, header .top-nav .top-nav-links .link-cv:after {
           position: absolute;
           content: '';
           height: 2px;
@@ -67,7 +68,7 @@ header {
           width: 0;
           left: 12px;
           bottom: -2px; }
-        header .top-nav .top-nav-links li.current:after {
+        header .top-nav .top-nav-links li.current:after, header .top-nav .top-nav-links .link-cv.current:after {
           width: 10px; }
     header .top-nav.scrolled:before {
       height: 100%;
@@ -78,7 +79,7 @@ header {
       content: ' ';
       top: 0;
       position: absolute; }
-  header li {
+  header li, header .link-cv {
     cursor: pointer;
     letter-spacing: 1.2px;
     list-style: none;
@@ -89,7 +90,7 @@ header {
     padding-right: 12px;
     transition: 250ms;
     color: #0A0360; }
-    header li:hover {
+    header li:hover, header .link-cv:hover {
       transform: skew(-10deg); }
 
 .cross-btn {
@@ -468,6 +469,15 @@ header {
     -moz-box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 0.2); }
 
+#goldmedal-wrapper .desktop-img {
+  background-image: url("../img/projects/goldmedal-desktop.png"); }
+
+#goldmedal-wrapper .tablet-img {
+  background-image: url("../img/projects/goldmedal-tablet.png"); }
+
+#goldmedal-wrapper .mobile-img {
+  background-image: url("../img/projects/goldmedal-mobile.png"); }
+
 #luf-wrapper .desktop-img {
   background-image: url("../img/projects/luf-desktop.png"); }
 
@@ -700,11 +710,13 @@ header {
     height: 100vh; } }
 
 @media screen and (min-width: 1550px) {
-  .project-images .desktop-img {
-    height: 445px;
-    width: 870px; }
-  .project-images .mobile-img {
-    top: 35%;
-    right: -9px;
-    height: 325px;
-    width: 182px; } }
+  .project-images {
+    max-width: 800px; }
+    .project-images .desktop-img {
+      height: 400px;
+      width: 800px; }
+    .project-images .mobile-img {
+      top: 35%;
+      right: -9px;
+      height: 325px;
+      width: 182px; } }

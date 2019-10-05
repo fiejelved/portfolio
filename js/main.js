@@ -82,6 +82,11 @@ $(document).ready(function() {
     $('.content-wrapper').fadeIn(); 
   });
 
+  $('.cross-btn.goldmedal-open').click(function() {
+    $('#goldmedal-wrapper').removeClass('visible');
+    $('.content-wrapper').fadeIn(); 
+  });
+
   $('.cross-btn').click(function() {
     $('.cross-btn span').toggleClass('rotate');
     window.scrollTo(0,0); 
@@ -118,6 +123,10 @@ $(document).ready(function() {
   });
   $('.cross-btn.banders').click(function(){
     $('#banders-wrapper').addClass('visible');
+    $('.content-wrapper').hide();
+  });
+  $('.cross-btn.goldmedal').click(function(){
+    $('#goldmedal-wrapper').addClass('visible');
     $('.content-wrapper').hide();
   });
 
