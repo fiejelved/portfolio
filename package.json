@@ -6,7 +6,7 @@
   "dependencies": {
     "gulp-cli": "^2.0.1",
     "jquery": "^3.4.1",
-    "node-sass": "^4.9.4"
+    "node-sass": "^7.0.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
